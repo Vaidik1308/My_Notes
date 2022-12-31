@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import './App.css';
-import NotesList from './components/NotesList';
 import Header from './Header';
+import { Route,Routes } from 'react-router-dom';
+import NewNotes from './components/NewNotes';
+import NotesPage from './components/NotesPage'
+import HomePage from './components/HomePage';
+import NotFound from './components/NotFound';
 
 function App() {
-  
 
+  const [color,setColor] = useState(null);
   const [search,setSearch] = useState('');
   const [notes,setNotes] = useState([
       {
@@ -54,7 +58,9 @@ function App() {
         "date":"13/08/2022"
       }
   
-  ])
+  ]);
+
+  console.log(color);
 
 
 
@@ -65,10 +71,27 @@ function App() {
         search={search}
         setSearch={setSearch}
       />
-      <NotesList
-        notes={notes}
-        setNotes={setNotes}
-      />
+
+      <Routes>
+        <Route 
+          path='/' 
+          element={<HomePage 
+            notes={notes} 
+            setNotes={setNotes}
+            color={color}
+            setColor={setColor}
+          />}
+        />
+        <Route 
+          path='/note/:id' 
+          element={<NotesPage
+            notes={notes}
+            color={color}  
+          />} 
+        />
+        <Route path='/note'  element={<NewNotes/>} />
+        <Route path='*' element={<NotFound/>} />
+      </Routes>
 
     </div>
   );

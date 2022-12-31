@@ -2,7 +2,7 @@ import React from 'react';
 import Note from './Note';
 
 const NotesList = (
-    {notes,setNotes}
+    {notes,setColor}
 ) => {
   return (
     <div className='noteLists'>
@@ -11,6 +11,7 @@ const NotesList = (
             <Note
                 key={note.id}
                 note={note}
+                setColor={setColor}
             />
         ))):
         (<p style={{fontSize: "1.3rem",textAlign: "center"}}>Add Notes</p>)
