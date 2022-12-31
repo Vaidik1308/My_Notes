@@ -1,0 +1,21 @@
+{
+    "notes":[
+        {
+            "id":"1",
+            "body" : "this is my notes",
+            "date":"13/08/2022"
+        },
+        {
+            "body" : "this is my notes",
+            "date":"13/08/2022"
+        },
+        {
+            "body" : "this is my notes",
+            "date":"13/08/2022"
+        },
+        {
+            "body" : "this is my notes",
+            "date":"13/08/2022"
+        }
+    ]
+}
