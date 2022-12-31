@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
-const NotesPage = ({notes,color}) => {
+const NotesPage = ({notes}) => {
 
   
   const notePageColor = useRef();
@@ -12,7 +12,7 @@ const NotesPage = ({notes,color}) => {
   useEffect(() => {
     notePageColor.current.style.backgroundColor = backColor;
     articleBackColor.current.style.border = `1px solid ${backColor}`;
-  },[])
+  },[backColor])
 
 
   return (

@@ -9,7 +9,6 @@ import NotFound from './components/NotFound';
 
 function App() {
 
-  const [color,setColor] = useState(null);
   const [search,setSearch] = useState('');
   const [notes,setNotes] = useState([
       {
@@ -59,11 +58,6 @@ function App() {
       }
   
   ]);
-
-  console.log(color);
-
-
-
   return (
     <div className="App">
       <Header
@@ -78,15 +72,12 @@ function App() {
           element={<HomePage 
             notes={notes} 
             setNotes={setNotes}
-            color={color}
-            setColor={setColor}
           />}
         />
         <Route 
           path='/note/:id' 
           element={<NotesPage
-            notes={notes}
-            color={color}  
+            notes={notes} 
           />} 
         />
         <Route path='/note'  element={<NewNotes/>} />

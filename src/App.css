@@ -98,6 +98,9 @@ body{
     /* background: #FFEA94; */
     color: black;
 }
+a{
+    text-decoration: none;
+}
 
 .note-body{
     width: 79%;
